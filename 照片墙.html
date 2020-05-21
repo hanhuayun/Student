@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片墙</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .big {
+            padding-left: 100px;
+            padding-top: 25px;
+            width: 100%;
+            height: 778px;
+            background: url(images/bg3.JPG) repeat-x;
+        }
+        
+        .big ul {
+            list-style: none;
+        }
+        
+        .big li {
+            float: left;
+            height: 160px;
+            background: #CCC;
+            margin-left: 30px;
+            border: 10px solid white;
+        }
+        
+        #div1 div {
+            height: 110px;
+            width: 170px;
+            background: url(images/11.jpg) white no-repeat;
+            background-size: cover;
+        }
+        
+        #div2 div {
+            height: 110px;
+            width: 100px;
+            background: url(images/22.JPG) white no-repeat;
+            background-size: cover;
+        }
+        
+        #div3 div {
+            height: 110px;
+            width: 170px;
+            background: url(images/33.JPG) white no-repeat;
+            background-size: cover;
+        }
+        
+        #div4 div {
+            height: 110px;
+            width: 170px;
+            background: url(images/44.JPG) white no-repeat;
+            background-size: cover;
+        }
+        
+        #div5 div {
+            height: 110px;
+            width: 150px;
+            background: url(images/55.JPG) white no-repeat;
+            background-size: cover;
+        }
+        
+        #div6 div {
+            height: 110px;
+            width: 160px;
+            background: url(images/66.JPG) white no-repeat;
+            background-size: cover;
+        }
+        
+        p {
+            background: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        #div1 {
+            transform: rotate(-5deg);
+            transform: translateY(-5px);
+        }
+        
+        #div1:hover {
+            transform: rotate(5deg);
+            transform: translateY(5px);
+            transform: scale(1.2, 1.2);
+        }
+        
+        #div2 {
+            transform: translateY(5px);
+        }
+        
+        #div2:hover {
+            transform: translateY(-5px);
+            transform: scale(1.2, 1.2);
+        }
+        
+        #div3 {
+            transform: rotate(-10deg);
+        }
+        
+        #div3:hover {
+            transform: rotate(10deg);
+            transform: scale(1.2, 1.2);
+        }
+        
+        #div4 {
+            transform: translateY(5px);
+        }
+        
+        #div4:hover {
+            transform: translateY(-5px);
+            transform: scale(1.2, 1.2);
+        }
+        
+        #div5 {
+            transform: rotate(5deg);
+        }
+        
+        #div5:hover {
+            transform: rotate(-5deg);
+            transform: scale(1.2, 1.2);
+        }
+        
+        #div6 {
+            transform: rotate(-10deg);
+        }
+        
+        #div6:hover {
+            transform: rotate(-10deg);
+            transform: scale(1.2, 1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class='big'>
+        <ul>
+            <li id='div1'>
+                <div></div>
+                <p>相识</p>
+            </li>
+            <li id='div2'>
+                <div></div>
+                <p>凝视</p>
+            </li>
+            <li id='div3'>
+                <div></div>
+                <p>甜睡</p>
+            </li>
+            <li id='div4'>
+                <div></div>
+                <p>逗乐</p>
+            </li>
+            <li id='div5'>
+                <div></div>
+                <p>奔跑</p>
+            </li>
+            <li id='div6'>
+                <div></div>
+                <p>漠视</p>
+            </li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
