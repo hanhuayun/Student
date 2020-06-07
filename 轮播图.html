@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            padding: 50px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        div {
+            margin: 0 auto;
+            position: relative;
+            width: 590px;
+            height: 470px;
+            overflow: hidden;
+        }
+        
+        ul.image {
+            position: relative;
+        }
+        
+        ul.image li {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+        }
+        
+        ul.image li.opa {
+            opacity: 1;
+        }
+        
+        .pre,
+        .next {
+            position: absolute;
+            top: 45%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .next {
+            right: 0;
+        }
+        
+        #point {
+            width: 150px;
+            height: 20px;
+            list-style: none;
+            position: absolute;
+            top: 90%;
+            left: 10%;
+        }
+        
+        ul.point li {
+            float: left;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.5;
+            margin-top: 3px;
+            margin-right: 3px;
+        }
+        
+        ul.point li.opa {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="image" class="image">
+            <li><img src="1.jpg" alt="" /></li>
+            <li><img src="2.jpg" alt="" /></li>
+            <li><img src="3.jpg" alt="" /></li>
+            <li><img src="4.jpg" alt="" /></li>
+            <li><img src="5.jpg" alt="" /></li>
+            <li><img src="6.jpg" alt="" /></li>
+            <li><img src="7.jpg" alt="" /></li>
+            <li><img src="8.jpg" alt="" /></li>
+        </ul>
+        <ul id="point" class="point">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="pre" class="pre">
+            <</div>
+                <div id="next" class="next">
+                    ></div>
+        </div>
+        <script src="jquery.js"></script>
+        <script>
+            //初始化
+            var index = 0;
+            var t;
+            var length = $('ul li').length;
+
+            $('#image li').eq(index).addClass('opa');
+            $('#point li').eq(index).addClass('opa');
+            //自动切换图片
+            var time = setInterval(autoMove, 1500);
+
+            function autoMove() {
+                index++;
+                if (index >= length) index = 0;
+                changeTo(index);
+            }
+
+            function changeTo(index) {
+                $('#image li').eq(index).addClass('opa').siblings().removeClass('opa');
+                $('#point li').eq(index).addClass('opa').siblings().removeClass('opa');
+            }
+
+            $('#pre').click(function() {
+                clearInterval(time);
+                if (index < 0)
+                    index = length - 1;
+                changeTo(index);
+                index--;
+
+            });
+            $('#next').click(function() {
+                clearInterval(time);
+                if (index >= length) {
+                    index = 0;
+                    changeTo(index);
+                } else {
+                    changeTo(index);
+                }
+                index++;
+            });
+            $("#pre").add($("#next")).hover(function() {
+                clearInterval(time);
+            }, function() {
+                time = setInterval(changeTo, 1500);
+            });
+        </script>
+</body>
+
+</html>
